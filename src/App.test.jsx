@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, within } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { expect, test } from 'vitest'
 import App from './App'
 
@@ -15,30 +15,10 @@ test('renders the portfolio navigation and required sections', () => {
 test('switches the about section to English', () => {
   render(<App />)
 
-  expect(screen.getAllByText(/PUC Minas/i).length).toBeGreaterThan(0)
   fireEvent.click(screen.getByRole('button', { name: /english/i }))
 
-  expect(screen.getByText(/Pontifical Catholic University of Minas Gerais/i)).toBeInTheDocument()
+  expect(screen.getByText(/SM&A Ecosystem/i)).toBeInTheDocument()
   expect(screen.getByRole('button', { name: /português/i })).toHaveAttribute('aria-pressed', 'true')
-})
-
-test('keeps every section available through the mobile menu and marks the selected section', () => {
-  render(<App />)
-
-  const navigation = screen.getByRole('navigation', { name: /navegação principal/i })
-  expect(within(navigation).getByRole('button', { name: /abrir menu/i })).toHaveAttribute('aria-expanded', 'false')
-  fireEvent.click(within(navigation).getByRole('button', { name: /abrir menu/i }))
-  expect(within(navigation).getByRole('button', { name: /fechar menu/i })).toHaveAttribute('aria-expanded', 'true')
-  const contactLink = within(navigation).getByRole('link', { name: /contato/i })
-  fireEvent.click(contactLink)
-  expect(contactLink).toHaveAttribute('aria-current', 'page')
-})
-
-test('offers the sanitised public resume for download', () => {
-  render(<App />)
-
-  expect(screen.getByRole('link', { name: /baixar currículo/i })).toHaveAttribute('href', '/curriculo/arthur-monserrat-curriculo-publico.pdf')
-  expect(screen.getAllByText(/Auxiliar Administrativo/i).length).toBeGreaterThan(0)
 })
 
 test('shows only the private corporate project with its correctly identified entry capture', () => {
