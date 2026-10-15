@@ -21,6 +21,13 @@ test('switches the about section to English', () => {
   expect(screen.getByRole('button', { name: /português/i })).toHaveAttribute('aria-pressed', 'true')
 })
 
+test('shows a real capture for each featured project', () => {
+  render(<App />)
+
+  expect(screen.getByRole('img', { name: /captura da aplicação sistema de apontamento de horas/i })).toBeInTheDocument()
+  expect(screen.getByRole('img', { name: /captura da aplicação banco de horas 2/i })).toBeInTheDocument()
+})
+
 test('shows validation errors and does not claim a configured email delivery', () => {
   render(<App />)
 

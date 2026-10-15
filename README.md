@@ -1,6 +1,6 @@
 # Arthur Monserrat Portfolio
 
-> **Status:** pronto para deploy; envio por e-mail e capturas reais de projetos aguardam configuração/evidências.
+> **Status:** publicado na Vercel; envio por e-mail aguarda configuração e teste real no EmailJS.
 
 Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de Software. É uma entrega do LAB01 de DIAW, estruturada como página única acessível para apresentar projetos públicos, experiências técnicas e contato.
 
@@ -19,6 +19,7 @@ Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de So
 - Links para repositórios e aplicações públicas.
 - Formulário com validação de nome, e-mail e mensagem, estado de envio e feedback acessível.
 - Layout responsivo, HTML semântico, labels, foco visível e contraste alto.
+- Capturas reais dos dois projetos em seus cards e em `docs/screenshots/`.
 
 ## Tecnologias e arquitetura
 
@@ -38,7 +39,7 @@ src/
   test/             # setup do Vitest
 docs/
   wireframes/       # exportações desktop e mobile do Figma
-  screenshots/      # capturas reais a adicionar
+  screenshots/      # capturas reais dos projetos apresentados
 .env.example        # nomes das variáveis públicas do EmailJS
 ```
 
@@ -77,18 +78,25 @@ Os wireframes de média fidelidade da Sprint 01 foram criados no Figma e exporta
 
 ![Wireframe mobile](docs/wireframes/mobile.png)
 
+## Capturas dos projetos
+
+As evidências foram registradas a partir das aplicações/código público dos próprios projetos em 15 de outubro de 2026.
+
+![Sistema de Apontamento de Horas](docs/screenshots/sistema-apontamento-horas.png)
+
+![Banco de Horas 2](docs/screenshots/banco-de-horas-2.png)
+
 ## Verificações realizadas
 
-- `npm test`: valida a navegação, a alternância de idioma e a validação de formulário.
+- `npm test`: valida a navegação, a alternância de idioma, as capturas dos projetos e a validação de formulário.
 - `npm run build`: gera o bundle de produção Vite.
 - Wireframes desktop e mobile revisados visualmente no Figma.
+- URL de produção aberta em navegador e verificada, inclusive sem autenticação.
 
 ## Evidências pendentes
 
-- Capturas/GIFs reais das aplicações em `docs/screenshots/` e `public/images/projects/`.
 - Contatos pessoais adicionais (e-mail público, LinkedIn e WhatsApp), se desejados.
 - Credenciais e teste real do EmailJS.
-- URL final da Vercel.
 
 ## Referências
 

@@ -6,7 +6,7 @@ export const projects = [
     technologies: ['React', 'Vite', 'TypeScript', 'Supabase'],
     repository: 'https://github.com/ArthurMonserrat/sma-apontamento-horas',
     demo: 'https://arthurmonserrat.github.io/sma-apontamento-horas/',
-    image: null,
+    image: '/images/projects/sistema-apontamento-horas.png',
   },
   {
     year: '2026',
@@ -15,7 +15,7 @@ export const projects = [
     technologies: ['React', 'Vite', 'TypeScript', 'Prisma'],
     repository: 'https://github.com/ArthurMonserrat/banco-de-horas-2',
     demo: 'https://arthurmonserrat.github.io/banco-de-horas-2/',
-    image: null,
+    image: '/images/projects/banco-de-horas-2.png',
   },
 ]
 
