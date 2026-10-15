@@ -1,6 +1,6 @@
 # Arthur Monserrat Portfolio
 
-> **Status:** publicado na Vercel; envio por e-mail aguarda configuração e teste real no EmailJS.
+> **Status:** publicado na Vercel; formulário EmailJS configurado e validado por envio real.
 
 Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de Software. É uma entrega do LAB01 de DIAW, estruturada como página única acessível para apresentar projetos públicos, experiências técnicas e contato.
 
@@ -17,7 +17,7 @@ Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de So
 - Apresentação alternável entre português e inglês.
 - Timeline cronológica de projetos e experiências com dados locais.
 - Links para repositórios e aplicações públicas.
-- Formulário com validação de nome, e-mail e mensagem, estado de envio e feedback acessível.
+- Formulário EmailJS com validação de nome, e-mail e mensagem, estado de envio e feedback acessível.
 - Layout responsivo, HTML semântico, labels, foco visível e contraste alto.
 - Capturas reais dos dois projetos em seus cards e em `docs/screenshots/`.
 
@@ -59,7 +59,9 @@ npm run build
 1. Copie `.env.example` para `.env.local`.
 2. Preencha os três identificadores públicos da conta EmailJS.
 3. Reinicie `npm run dev`.
-4. Faça um envio real de teste antes de afirmar que o formulário está funcional.
+4. Na Vercel, crie as mesmas variáveis para Production e faça um novo deploy.
+
+O serviço Gmail e o template de contato estão configurados na conta EmailJS vinculada. O template usa `{{name}}`, `{{email}}` e `{{message}}`, com `{{email}}` em Reply-To.
 
 As chaves não devem ser enviadas ao Git. Para a Vercel, configure as mesmas variáveis no painel do projeto.
 
@@ -92,11 +94,11 @@ As evidências foram registradas a partir das aplicações/código público dos 
 - `npm run build`: gera o bundle de produção Vite.
 - Wireframes desktop e mobile revisados visualmente no Figma.
 - URL de produção aberta em navegador e verificada, inclusive sem autenticação.
+- Formulário em produção submetido com sucesso ao EmailJS.
 
 ## Evidências pendentes
 
 - Contatos pessoais adicionais (e-mail público, LinkedIn e WhatsApp), se desejados.
-- Credenciais e teste real do EmailJS.
 
 ## Referências
 
