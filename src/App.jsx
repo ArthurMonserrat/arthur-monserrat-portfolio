@@ -14,8 +14,11 @@ export default function App() {
         <section className="hero" id="inicio" aria-labelledby="hero-title">
           <p className="eyebrow">PORTFÓLIO / 2026</p>
           <h1 id="hero-title">Arthur<br />Monserrat <em>Souza.</em></h1>
-          <p className="hero-copy">Estudante de Engenharia de Software. Este portfólio apresenta um projeto de apontamento de horas do Ecossistema SM&A.</p>
-          <a className="text-link" href="#projetos">Ver projetos <span aria-hidden="true">↓</span></a>
+          <p className="hero-copy">Estudante de Engenharia de Software na PUC Minas, com interesse em desenvolvimento web e interfaces.</p>
+          <div className="hero-actions">
+            <a className="text-link" href="#projetos">Ver projeto <span aria-hidden="true">↓</span></a>
+            <a className="secondary-link" href="#contato">Entrar em contato</a>
+          </div>
         </section>
 
         <section id="sobre" aria-labelledby="sobre-title">

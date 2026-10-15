@@ -11,9 +11,9 @@ export const projects = [
 
 export const experiences = [
   {
-    period: '2026',
-    organization: 'Projetos acadêmicos e técnicos',
-    role: 'Desenvolvimento web',
-    description: 'Desenvolvimento e publicação de aplicações web registradas em repositórios públicos do GitHub.',
+    period: 'Jan. 2025 — atual',
+    organization: 'Atuação administrativa',
+    role: 'Auxiliar Administrativo',
+    description: 'Atuação em análise documental, de dados e de áudios em processos de prevenção a fraudes.',
   },
 ]

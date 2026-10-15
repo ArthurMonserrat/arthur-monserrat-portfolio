@@ -2,7 +2,7 @@
 
 > **Status:** publicado na Vercel; formulário EmailJS configurado e validado por envio real.
 
-Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de Software. É uma entrega do LAB01 de DIAW, estruturada como página única acessível para apresentar um projeto selecionado, experiências técnicas e contato.
+Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de Software na PUC Minas. É uma entrega do LAB01 de DIAW, estruturada como página única acessível para apresentar formação, experiência profissional, um estudo de caso selecionado e contato.
 
 ## Links
 
@@ -12,9 +12,9 @@ Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de So
 
 ## Funcionalidades
 
-- Navegação de uma página por âncoras.
+- Cabeçalho fixo, navegação por âncoras, seção ativa e menu móvel com todas as seções.
 - Apresentação alternável entre português e inglês.
-- Timeline cronológica de projetos e experiências com dados locais.
+- Timeline de projeto e experiência profissional com dados locais.
 - Projeto corporativo apresentado sem publicar código-fonte ou rotas de acesso.
 - Links diretos para GitHub, LinkedIn e e-mail público.
 - Formulário EmailJS com validação de nome, e-mail e mensagem, estado de envio e feedback acessível.
@@ -65,6 +65,10 @@ O serviço Gmail e o template de contato estão configurados na conta EmailJS vi
 
 As chaves não devem ser enviadas ao Git. Para a Vercel, configure as mesmas variáveis no painel do projeto.
 
+### Verificação do formulário
+
+Em 15/10/2026, o formulário foi testado em produção. A solicitação foi registrada como `OK` no EmailJS e a mensagem chegou à caixa destinatária. Os três identificadores do EmailJS estão cadastrados somente para o ambiente Production na Vercel. Testes automatizados simulam as respostas de sucesso e de falha, mantendo mensagens genéricas para visitantes.
+
 ## Deploy
 
 1. Suba este repositório no GitHub.
@@ -86,9 +90,21 @@ O portfólio apresenta apenas o Sistema de Apontamento de Horas. A imagem abaixo
 
 ![Tela de entrada do Ecossistema SM&A](docs/screenshots/sistema-apontamento-horas.png)
 
+## Matriz de requisitos — LAB01
+
+| Requisito | Status | Evidência |
+| --- | --- | --- |
+| Sobre em português e inglês, formação, interesses e objetivo | Atendido | Seção **Sobre mim** com alternância PT/EN baseada no currículo. |
+| Projetos em timeline com descrição, tecnologias e imagem/GIF | Atendido em parte | Estudo de caso SM&A com tecnologias e tela de entrada real; código e aplicação não são públicos por confidencialidade. |
+| Experiências com instituição, função, período e descrição | Atendido em parte | Função, período e atividades vêm do currículo; a empresa não foi informada no currículo e não foi inventada. |
+| Contato com ícones e formulário de e-mail | Atendido | Links para GitHub, LinkedIn e e-mail; envio EmailJS validado em produção. |
+| Navegação, responsividade e interface | Atendido | Cabeçalho fixo, menu móvel, âncoras e foco visível. |
+| Deploy, repositório e README | Atendido | Site e código públicos, instruções locais, tecnologias, dependências e estrutura documentadas. |
+| Wireframes e evolução visual | Atendido | Exportações em `docs/wireframes/` e link do Figma. |
+
 ## Verificações realizadas
 
-- `npm test`: valida a navegação, a alternância de idioma, o projeto único, os canais de contato e a validação de formulário.
+- `npm test`: valida navegação, alternância de idioma, projeto único, canais de contato, validação e estados de sucesso/falha do EmailJS com mock.
 - `npm run build`: gera o bundle de produção Vite.
 - Wireframes desktop e mobile revisados visualmente no Figma.
 - URL de produção aberta em navegador e verificada, inclusive sem autenticação.

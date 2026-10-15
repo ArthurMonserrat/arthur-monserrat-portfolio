@@ -3,13 +3,13 @@ import { useState } from 'react'
 const copy = {
   pt: {
     button: 'English',
-    paragraph: 'Sou Arthur Monserrat Souza, estudante de Engenharia de Software. Este portfólio apresenta o Sistema de Apontamento de Horas do Ecossistema SM&A e sua tela de entrada para os sistemas Banco de Horas 1 e Banco de Horas 2 (Campo e Estudos).',
-    facts: ['Formação: Engenharia de Software', 'Projeto: Sistema de Apontamento de Horas', 'Tecnologias: React, Vite, TypeScript e Supabase'],
+    paragraph: 'Sou Arthur Monserrat Souza, estudante do 3º período de Engenharia de Software na PUC Minas. Desde janeiro de 2025, atuo como Auxiliar Administrativo, com análise documental, de dados e de áudios em processos de prevenção a fraudes. Tenho interesse em desenvolvimento web, interfaces e aplicações de software.',
+    facts: ['Formação: Engenharia de Software — PUC Minas', 'Interesses: desenvolvimento web, interfaces e software', 'Conhecimentos: HTML, CSS, JavaScript, Git e GitHub'],
   },
   en: {
     button: 'Português',
-    paragraph: 'I am Arthur Monserrat Souza, a Software Engineering student. This portfolio presents the SM&A Ecosystem Time Tracking System and its entry screen for Banco de Horas 1 and Banco de Horas 2 (Field and Studies).',
-    facts: ['Education: Software Engineering', 'Project: Time Tracking System', 'Technologies: React, Vite, TypeScript, and Supabase'],
+    paragraph: 'I am Arthur Monserrat Souza, a third-semester Software Engineering student at the Pontifical Catholic University of Minas Gerais. Since January 2025, I have worked as an Administrative Assistant, analyzing documents, data, and audio in fraud prevention processes. I am interested in web development, interfaces, and software applications.',
+    facts: ['Education: Software Engineering — PUC Minas', 'Interests: web development, interfaces, and software', 'Knowledge: HTML, CSS, JavaScript, Git, and GitHub'],
   },
 }
 

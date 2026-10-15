@@ -1,6 +1,14 @@
-import { fireEvent, render, screen } from '@testing-library/react'
-import { expect, test } from 'vitest'
+import { fireEvent, render, screen, within } from '@testing-library/react'
+import { afterEach, expect, test, vi } from 'vitest'
+import emailjs from '@emailjs/browser'
 import App from './App'
+
+vi.mock('@emailjs/browser', () => ({ default: { send: vi.fn() } }))
+
+afterEach(() => {
+  vi.clearAllMocks()
+  vi.unstubAllEnvs()
+})
 
 test('renders the portfolio navigation and required sections', () => {
   render(<App />)
@@ -15,10 +23,23 @@ test('renders the portfolio navigation and required sections', () => {
 test('switches the about section to English', () => {
   render(<App />)
 
+  expect(screen.getAllByText(/PUC Minas/i).length).toBeGreaterThan(0)
   fireEvent.click(screen.getByRole('button', { name: /english/i }))
 
-  expect(screen.getByText(/SM&A Ecosystem/i)).toBeInTheDocument()
+  expect(screen.getByText(/Pontifical Catholic University of Minas Gerais/i)).toBeInTheDocument()
   expect(screen.getByRole('button', { name: /português/i })).toHaveAttribute('aria-pressed', 'true')
+})
+
+test('keeps every section available through the mobile menu and marks the selected section', () => {
+  render(<App />)
+
+  const navigation = screen.getByRole('navigation', { name: /navegação principal/i })
+  const menuButton = within(navigation).getByRole('button', { name: /abrir menu/i })
+  expect(menuButton).toHaveAttribute('aria-expanded', 'false')
+  fireEvent.click(menuButton)
+  const contactLink = within(navigation).getByRole('link', { name: /contato/i })
+  fireEvent.click(contactLink)
+  expect(contactLink).toHaveAttribute('aria-current', 'page')
 })
 
 test('shows only the private corporate project with its correctly identified entry capture', () => {
@@ -62,4 +83,36 @@ test('keeps unavailable delivery feedback free of implementation details', () =>
 
   expect(screen.getByRole('status')).toHaveTextContent(/o envio não está disponível agora/i)
   expect(screen.queryByText(/emailjs/i)).not.toBeInTheDocument()
+})
+
+test('shows a friendly confirmation after EmailJS accepts a valid message', async () => {
+  vi.stubEnv('VITE_EMAILJS_SERVICE_ID', 'service')
+  vi.stubEnv('VITE_EMAILJS_TEMPLATE_ID', 'template')
+  vi.stubEnv('VITE_EMAILJS_PUBLIC_KEY', 'public')
+  emailjs.send.mockResolvedValue({ status: 200 })
+  render(<App />)
+
+  fireEvent.change(screen.getByLabelText('Nome'), { target: { value: 'Visitante' } })
+  fireEvent.change(screen.getByLabelText('E-mail'), { target: { value: 'visitante@example.com' } })
+  fireEvent.change(screen.getByLabelText('Mensagem'), { target: { value: 'Mensagem de teste válida.' } })
+  fireEvent.click(screen.getByRole('button', { name: /enviar mensagem/i }))
+
+  expect(await screen.findByRole('status')).toHaveTextContent(/mensagem enviada com sucesso/i)
+  expect(emailjs.send).toHaveBeenCalledOnce()
+})
+
+test('keeps EmailJS failures technical-detail-free for visitors', async () => {
+  vi.stubEnv('VITE_EMAILJS_SERVICE_ID', 'service')
+  vi.stubEnv('VITE_EMAILJS_TEMPLATE_ID', 'template')
+  vi.stubEnv('VITE_EMAILJS_PUBLIC_KEY', 'public')
+  emailjs.send.mockRejectedValue(new Error('EmailJS response 403'))
+  render(<App />)
+
+  fireEvent.change(screen.getByLabelText('Nome'), { target: { value: 'Visitante' } })
+  fireEvent.change(screen.getByLabelText('E-mail'), { target: { value: 'visitante@example.com' } })
+  fireEvent.change(screen.getByLabelText('Mensagem'), { target: { value: 'Mensagem de teste válida.' } })
+  fireEvent.click(screen.getByRole('button', { name: /enviar mensagem/i }))
+
+  expect(await screen.findByRole('status')).toHaveTextContent(/não foi possível enviar/i)
+  expect(screen.queryByText(/emailjs|403/i)).not.toBeInTheDocument()
 })
