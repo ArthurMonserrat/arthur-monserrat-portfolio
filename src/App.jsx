@@ -14,7 +14,7 @@ export default function App() {
         <section className="hero" id="inicio" aria-labelledby="hero-title">
           <p className="eyebrow">PORTFÓLIO / 2026</p>
           <h1 id="hero-title">Arthur<br />Monserrat <em>Souza.</em></h1>
-          <p className="hero-copy">Estudante de Engenharia de Software, interessado em transformar problemas em experiências digitais claras.</p>
+          <p className="hero-copy">Estudante de Engenharia de Software. Este portfólio apresenta um projeto de apontamento de horas do Ecossistema SM&A.</p>
           <a className="text-link" href="#projetos">Ver projetos <span aria-hidden="true">↓</span></a>
         </section>
 

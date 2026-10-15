@@ -2,24 +2,24 @@
 
 > **Status:** publicado na Vercel; formulário EmailJS configurado e validado por envio real.
 
-Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de Software. É uma entrega do LAB01 de DIAW, estruturada como página única acessível para apresentar projetos públicos, experiências técnicas e contato.
+Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de Software. É uma entrega do LAB01 de DIAW, estruturada como página única acessível para apresentar um projeto selecionado, experiências técnicas e contato.
 
 ## Links
 
 - Site publicado: [arthur-monserrat-portfolio.vercel.app](https://arthur-monserrat-portfolio.vercel.app).
 - Código-fonte: [ArthurMonserrat/arthur-monserrat-portfolio](https://github.com/ArthurMonserrat/arthur-monserrat-portfolio).
 - Wireframes: [Figma](https://www.figma.com/design/AP1vCzHXem9UYPc8woX1aO).
-- Repositórios apresentados: [Sistema de Apontamento de Horas](https://github.com/ArthurMonserrat/sma-apontamento-horas) e [Banco de Horas 2](https://github.com/ArthurMonserrat/banco-de-horas-2).
 
 ## Funcionalidades
 
 - Navegação de uma página por âncoras.
 - Apresentação alternável entre português e inglês.
 - Timeline cronológica de projetos e experiências com dados locais.
-- Links para repositórios e aplicações públicas.
+- Projeto corporativo apresentado sem publicar código-fonte ou rotas de acesso.
+- Links diretos para GitHub, LinkedIn e e-mail público.
 - Formulário EmailJS com validação de nome, e-mail e mensagem, estado de envio e feedback acessível.
 - Layout responsivo, HTML semântico, labels, foco visível e contraste alto.
-- Capturas reais dos dois projetos em seus cards e em `docs/screenshots/`.
+- Captura real da tela de entrada do Ecossistema SM&A, sem dados pessoais ou internos.
 
 ## Tecnologias e arquitetura
 
@@ -28,7 +28,7 @@ Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de So
 - `@emailjs/browser` para envio direto no cliente.
 - Vercel para hospedar o front-end estático.
 
-O navegador entrega o front-end React pela Vercel. Quando configurado, o formulário chama o EmailJS diretamente. Não há API própria, banco de dados ou autenticação neste projeto.
+O navegador entrega o front-end React pela Vercel. O formulário chama o EmailJS diretamente. Não há API própria, banco de dados ou autenticação neste projeto.
 
 ## Estrutura
 
@@ -69,7 +69,7 @@ As chaves não devem ser enviadas ao Git. Para a Vercel, configure as mesmas var
 
 1. Suba este repositório no GitHub.
 2. Importe-o na Vercel e mantenha o preset Vite.
-3. Configure as variáveis do EmailJS, se o formulário for ativado.
+3. Configure as variáveis do EmailJS.
 4. Execute/verifique o build e publique.
 
 ## Wireframes
@@ -80,25 +80,23 @@ Os wireframes de média fidelidade da Sprint 01 foram criados no Figma e exporta
 
 ![Wireframe mobile](docs/wireframes/mobile.png)
 
-## Capturas dos projetos
+## Captura do projeto
 
-As evidências foram registradas a partir das aplicações/código público dos próprios projetos em 15 de outubro de 2026.
+O portfólio apresenta apenas o Sistema de Apontamento de Horas. A imagem abaixo é a tela de entrada real do Ecossistema SM&A, que mostra a seleção dos sistemas Banco de Horas 1 e Banco de Horas 2 (Campo e Estudos); ela não é um painel administrativo nem uma visão de colaborador e não contém dados pessoais ou internos.
 
-![Sistema de Apontamento de Horas](docs/screenshots/sistema-apontamento-horas.png)
-
-![Banco de Horas 2](docs/screenshots/banco-de-horas-2.png)
+![Tela de entrada do Ecossistema SM&A](docs/screenshots/sistema-apontamento-horas.png)
 
 ## Verificações realizadas
 
-- `npm test`: valida a navegação, a alternância de idioma, as capturas dos projetos e a validação de formulário.
+- `npm test`: valida a navegação, a alternância de idioma, o projeto único, os canais de contato e a validação de formulário.
 - `npm run build`: gera o bundle de produção Vite.
 - Wireframes desktop e mobile revisados visualmente no Figma.
 - URL de produção aberta em navegador e verificada, inclusive sem autenticação.
 - Formulário em produção submetido com sucesso ao EmailJS.
 
-## Evidências pendentes
+## Limitação conhecida
 
-- Contatos pessoais adicionais (e-mail público, LinkedIn e WhatsApp), se desejados.
+A captura da visão de colaborador não estava disponível sem autenticação adicional. Ela pode substituir a tela de entrada em uma atualização futura, após revisão para remover dados internos ou pessoais.
 
 ## Referências
 

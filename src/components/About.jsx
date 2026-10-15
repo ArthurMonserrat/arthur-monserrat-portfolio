@@ -3,13 +3,13 @@ import { useState } from 'react'
 const copy = {
   pt: {
     button: 'English',
-    paragraph: 'Sou Arthur Monserrat Souza, estudante de Engenharia de Software. Este espaço reúne projetos em desenvolvimento web e uma trajetória construída com aprendizado contínuo.',
-    facts: ['Formação: Engenharia de Software', 'Foco: aplicações web', 'Objetivo: construir soluções claras e úteis'],
+    paragraph: 'Sou Arthur Monserrat Souza, estudante de Engenharia de Software. Este portfólio apresenta o Sistema de Apontamento de Horas do Ecossistema SM&A e sua tela de entrada para os sistemas Banco de Horas 1 e Banco de Horas 2 (Campo e Estudos).',
+    facts: ['Formação: Engenharia de Software', 'Projeto: Sistema de Apontamento de Horas', 'Tecnologias: React, Vite, TypeScript e Supabase'],
   },
   en: {
     button: 'Português',
-    paragraph: 'I am Arthur Monserrat Souza, a Software Engineering student. This space brings together web development projects and a journey built through continuous learning.',
-    facts: ['Education: Software Engineering', 'Focus: web applications', 'Goal: build clear and useful solutions'],
+    paragraph: 'I am Arthur Monserrat Souza, a Software Engineering student. This portfolio presents the SM&A Ecosystem Time Tracking System and its entry screen for Banco de Horas 1 and Banco de Horas 2 (Field and Studies).',
+    facts: ['Education: Software Engineering', 'Project: Time Tracking System', 'Technologies: React, Vite, TypeScript, and Supabase'],
   },
 }
 
