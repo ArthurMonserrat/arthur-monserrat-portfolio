@@ -1,132 +1,222 @@
-# Arthur Monserrat Portfolio
+# LAB01 - Portfólio Profissional | Arthur Monserrat
 
-> **Status:** publicado na Vercel; formulário EmailJS configurado e validado por envio real.
+<p align="center">
+  <img src="public/favicon.svg" alt="Monograma AM." width="72" height="72">
+</p>
 
-Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de Software na PUC Minas. É uma entrega do LAB01 de DIAW, estruturada como página única acessível para apresentar formação, experiência profissional, um estudo de caso selecionado e contato.
+<p align="center">Portfólio profissional responsivo desenvolvido para a disciplina Desenvolvimento e Integração de Aplicações Web (DIAW), da Engenharia de Software da PUC Minas.</p>
 
-## Links
+![React](https://img.shields.io/badge/React-19-20232A?logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?logo=javascript&logoColor=111827)
+![Deploy](https://img.shields.io/badge/Deploy-Vercel-000000?logo=vercel&logoColor=white)
 
-- Site publicado: [arthur-monserrat-portfolio.vercel.app](https://arthur-monserrat-portfolio.vercel.app).
-- Código-fonte: [ArthurMonserrat/arthur-monserrat-portfolio](https://github.com/ArthurMonserrat/arthur-monserrat-portfolio).
-- Wireframes: [Figma](https://www.figma.com/design/AP1vCzHXem9UYPc8woX1aO).
+**Status:** concluído, publicado e sincronizado com `main`.
 
-## Funcionalidades
+## Índice
 
-- Cabeçalho fixo, navegação por âncoras, seção ativa e menu móvel com todas as seções.
-- Internacionalização local PT/EN no cabeçalho, com persistência em `localStorage` e atualização de `lang` no HTML.
-- Timeline de projeto e experiência profissional com dados locais.
-- Projeto corporativo apresentado sem publicar código-fonte ou rotas de acesso.
-- Links diretos para GitHub, LinkedIn, composição do Gmail e WhatsApp, com alternativa de e-mail direto.
-- Formulário EmailJS com validação de nome, e-mail e mensagem, estado de envio e feedback acessível.
-- Layout responsivo, HTML semântico, labels, foco visível e contraste alto.
-- Galeria responsiva com a captura real da tela de entrada do Ecossistema SM&A, sem dados pessoais ou internos.
-- Textos explicativos do hero, Sobre mim, projeto, experiência e contato justificados no desktop e alinhados à esquerda no mobile.
-- Favicon SVG com o monograma AM. e identidade azul-noturno/verde-lima.
+- [Links úteis](#links-úteis)
+- [Sobre o projeto](#sobre-o-projeto)
+- [Funcionalidades principais](#funcionalidades-principais)
+- [Tecnologias e dependências](#tecnologias-e-dependências)
+- [Arquitetura](#arquitetura)
+- [Instalação e execução](#instalação-e-execução)
+- [Variáveis de ambiente](#variáveis-de-ambiente)
+- [Deploy na Vercel](#deploy-na-vercel)
+- [Estrutura de pastas](#estrutura-de-pastas)
+- [Demonstração](#demonstração)
+- [Testes](#testes)
+- [Matriz de requisitos do LAB01](#matriz-de-requisitos-do-lab01)
+- [Documentações e referências](#documentações-e-referências)
+- [Autor](#autor)
+- [Agradecimentos](#agradecimentos)
 
-## Tecnologias e arquitetura
+## Links úteis
 
-- React 19, Vite, JavaScript e CSS puro.
-- Vitest + Testing Library para testes de interface.
-- `@emailjs/browser` para envio direto no cliente.
-- Vercel para hospedar o front-end estático.
+- **Site publicado:** [arthur-monserrat-portfolio.vercel.app](https://arthur-monserrat-portfolio.vercel.app/)
+- **Repositório:** [github.com/ArthurMonserrat/arthur-monserrat-portfolio](https://github.com/ArthurMonserrat/arthur-monserrat-portfolio)
+- **Figma:** [wireframes do portfólio](https://www.figma.com/design/AP1vCzHXem9UYPc8woX1aO)
+- **LinkedIn:** [linkedin.com/in/arthurmonserrat](https://www.linkedin.com/in/arthurmonserrat)
 
-O navegador entrega o front-end React pela Vercel. O formulário chama o EmailJS diretamente. Não há API própria, banco de dados ou autenticação neste projeto.
+## Sobre o projeto
 
-## Estrutura
+O LAB01 - Portfólio Profissional apresenta a formação, os interesses, a experiência e os canais de contato de Arthur Monserrat Souza. O projeto foi desenvolvido para a disciplina DIAW, sob orientação do professor João Paulo Carneiro Aramuni, como uma página única responsiva com navegação por seções.
 
-```text
-src/
-  components/       # Header, About, Timeline, Contact, Footer
-  data/             # projetos e experiências em arrays
-  hooks/             # persistência e sincronização do idioma
-  i18n.js            # dicionários PT/EN da interface
-  test/             # setup do Vitest
-docs/
-  wireframes/       # exportações desktop e mobile do Figma
-  screenshots/      # capturas reais dos projetos apresentados
-.env.example        # nomes das variáveis públicas do EmailJS
+O portfólio inclui um estudo de caso do Sistema de Apontamento de Horas da SM&A. Esse sistema empresarial é apresentado somente com informações e uma captura autorizada da tela de entrada. Código-fonte, rotas, dados internos e link de acesso empresarial não são publicados por confidencialidade.
+
+## Funcionalidades principais
+
+- Apresentação profissional em português e inglês.
+- Seletor global PT|EN, sem recarregar a página, com persistência no `localStorage` e atualização do atributo `lang`.
+- Cabeçalho fixo, âncoras, seção ativa e menu responsivo com as quatro seções.
+- Timeline com o estudo de caso do Sistema de Apontamento de Horas e experiência como estagiário na SM&A desde 2026.
+- Contatos clicáveis para GitHub, LinkedIn, composição do Gmail e WhatsApp, com alternativa de e-mail direto via `mailto:`.
+- Formulário de contato com nome, e-mail e mensagem, integrado ao EmailJS.
+- Validações locais e mensagens de envio, sucesso e falha traduzidas.
+- Favicon SVG com o monograma `AM.`.
+- Layout responsivo, foco visível, HTML semântico e contraste coerente com a identidade azul-noturno e verde-lima.
+
+## Tecnologias e dependências
+
+### Aplicação do portfólio
+
+| Categoria | Tecnologia | Versão declarada |
+| --- | --- | --- |
+| Interface | React | `^19.0.0` |
+| Renderização | React DOM | `^19.0.0` |
+| Linguagem | JavaScript (ES modules) | conforme Node.js LTS |
+| Estilos | CSS puro | - |
+| Build e desenvolvimento | Vite | `^6.2.0` |
+| Testes | Vitest | `^3.0.7` |
+| Testes de interface | Testing Library, jest-dom, jsdom | `^16.2.0`, `^6.6.3`, `^26.0.0` |
+| Formulário | `@emailjs/browser` | `^4.4.1` |
+| Hospedagem | Vercel | produção |
+| Versionamento | Git e GitHub | repositório público |
+
+As tecnologias React, TypeScript, Vite e Supabase exibidas no card do SM&A descrevem o projeto empresarial documentado, não a implementação deste portfólio. A lista de conhecimentos pessoais publicada na seção Sobre mim contém somente tecnologias com evidência de uso ou estudo no material disponível.
+
+## Arquitetura
+
+O projeto é um front-end estático React/Vite. O navegador renderiza os componentes locais e, quando configurado, envia o formulário diretamente ao EmailJS. O GitHub mantém o código e a Vercel gera e publica o bundle do Vite. Não há API própria, banco de dados ou autenticação neste repositório.
+
+```mermaid
+flowchart LR
+  A[Visitante] --> B[React + Vite]
+  B --> C[Interface responsiva]
+  B --> D[EmailJS]
+  D --> E[Caixa de e-mail configurada]
+  F[GitHub main] --> G[Vercel]
+  G --> C
 ```
 
-## Executar localmente
+## Instalação e execução
 
-Pré-requisito: Node.js LTS.
+### Pré-requisitos
+
+- Node.js LTS e npm.
+- Uma conta EmailJS configurada somente se o formulário precisar enviar mensagens em ambiente local.
+
+### Executar localmente
 
 ```bash
+git clone https://github.com/ArthurMonserrat/arthur-monserrat-portfolio.git
+cd arthur-monserrat-portfolio
 npm install
 npm run dev
-npm test
+```
+
+O Vite informa no terminal a URL local, normalmente `http://localhost:5173`.
+
+### Testar e gerar build
+
+```bash
+npm test -- --run
 npm run build
 ```
 
-## Configurar EmailJS
+## Variáveis de ambiente
 
-1. Copie `.env.example` para `.env.local`.
-2. Preencha os três identificadores públicos da conta EmailJS.
-3. Reinicie `npm run dev`.
-4. Na Vercel, crie as mesmas variáveis para Production e faça um novo deploy.
+Copie `.env.example` para `.env.local` e preencha os identificadores públicos da sua própria conta EmailJS:
 
-O serviço Gmail e o template de contato estão configurados na conta EmailJS vinculada. O template usa `{{name}}`, `{{email}}` e `{{message}}`, com `{{email}}` em Reply-To.
+```dotenv
+VITE_EMAILJS_SERVICE_ID=seu_service_id
+VITE_EMAILJS_TEMPLATE_ID=seu_template_id
+VITE_EMAILJS_PUBLIC_KEY=sua_public_key
+```
 
-As chaves não devem ser enviadas ao Git. Para a Vercel, configure as mesmas variáveis no painel do projeto.
+Os valores reais não são versionados. Sem as três variáveis, o formulário preserva a validação, mas informa que o envio não está disponível. O template EmailJS utilizado pelo projeto recebe `name`, `email` e `message`, com `email` em Reply-To.
 
-### Verificação do formulário
+## Deploy na Vercel
 
-Em 15/10/2026, o formulário foi testado em produção. A solicitação foi registrada como `OK` no EmailJS e a mensagem chegou à caixa destinatária. Os três identificadores do EmailJS estão cadastrados somente para o ambiente Production na Vercel. Testes automatizados simulam as respostas de sucesso e de falha, mantendo mensagens genéricas para visitantes.
+1. Importe o repositório GitHub na Vercel.
+2. Mantenha o preset Vite e o comando de build `npm run build`.
+3. Configure as três variáveis `VITE_EMAILJS_*` no ambiente Production.
+4. Faça o deploy ou redeploy após qualquer alteração de variável.
+5. Confira a URL pública: [arthur-monserrat-portfolio.vercel.app](https://arthur-monserrat-portfolio.vercel.app/).
 
-## Deploy
+## Estrutura de pastas
 
-1. Suba este repositório no GitHub.
-2. Importe-o na Vercel e mantenha o preset Vite.
-3. Configure as variáveis do EmailJS.
-4. Execute/verifique o build e publique.
+```text
+.
+├── public/
+│   ├── favicon.svg
+│   └── images/projects/          # imagem real do estudo de caso SM&A
+├── docs/
+│   ├── screenshots/              # capturas do portfólio e do estudo de caso
+│   ├── superpowers/              # especificação e plano da implementação
+│   └── wireframes/               # exportações desktop/mobile do Figma
+├── src/
+│   ├── components/               # Header, About, Timeline, Contact e Footer
+│   ├── data/                     # dados do projeto e da experiência
+│   ├── hooks/                    # persistência e sincronização do idioma
+│   ├── i18n.js                   # dicionários PT/EN
+│   ├── App.jsx
+│   └── App.test.jsx
+├── .env.example
+├── index.html
+├── package.json
+└── vite.config.js
+```
 
-## Wireframes
+## Demonstração
 
-Os wireframes de média fidelidade da Sprint 01 foram criados no Figma e exportados para o repositório.
+### Wireframes do Figma
 
 ![Wireframe desktop](docs/wireframes/desktop.png)
 
 ![Wireframe mobile](docs/wireframes/mobile.png)
 
-## Capturas do projeto
+### Site publicado
 
-O portfólio apresenta apenas o Sistema de Apontamento de Horas. A descrição pública explica a organização observável na tela de entrada, sem atribuir autoria integral ou publicar dados internos.
+![Portfólio em desktop](docs/screenshots/portfolio-desktop.png)
 
-![Tela de entrada do Ecossistema SM&A](docs/screenshots/sistema-apontamento-horas.png)
+![Portfólio em mobile](docs/screenshots/portfolio-mobile.png)
 
-Esta é a única captura real disponível nos arquivos locais autorizados. A segunda captura, da tela de login do colaborador, permanece pendente até existir uma imagem obtida e autorizada para publicação; nenhuma tela foi fabricada ou substituída por um painel administrativo.
+### Estudo de caso SM&A
 
-## Matriz de requisitos — LAB01
+![Tela de entrada do Sistema de Apontamento de Horas](docs/screenshots/sistema-apontamento-horas.png)
+
+A imagem acima é a captura real autorizada da tela de entrada. Não foi publicada uma tela de login do colaborador porque não havia uma imagem obtida com autorização verificável. Essa captura adicional pode ser incluída futuramente, mas não é tratada como obrigação literal do professor.
+
+## Testes
+
+Comandos executados na versão final:
+
+- `npm test -- --run`: **17 testes aprovados**.
+- `npm run build`: **build Vite aprovado**.
+- `git diff --check`: **sem erros de whitespace**.
+
+A suíte cobre navegação, menu mobile, alternância PT/EN, persistência do idioma, preservação dos dados do formulário, validações, estados mockados do EmailJS, projeto único, favicon, contatos Gmail/WhatsApp e fallback `mailto`.
+
+## Matriz de requisitos do LAB01
 
 | Requisito | Status | Evidência |
 | --- | --- | --- |
-| Sobre em português e inglês, formação, interesses e objetivo | Atendido | Interface completa PT/EN, com seletor no cabeçalho, persistência local e `lang` dinâmico. |
-| Projetos em timeline com descrição, tecnologias e imagem/GIF | Atendido | Estudo de caso SM&A com descrição objetiva, tecnologias documentadas e uma tela de entrada real. |
-| Experiências com instituição, função, período e descrição | Atendido | Registro atual da SM&A como estágio, com período e descrição informados para esta entrega. |
-| Contato com ícones e formulário de e-mail | Atendido | Links para GitHub, LinkedIn, Gmail e WhatsApp, alternativa `mailto` e envio EmailJS validado em produção. |
-| Link público do projeto empresarial | Limitado por confidencialidade | O repositório ou a aplicação interna do SM&A não são publicados; o portfólio apresenta apenas informações e captura autorizadas. |
-| Captura adicional da tela de login do colaborador | Pendente, sem impacto na exigência literal do LAB01 | Não havia sessão autorizada nem imagem fornecida para publicação; nenhuma tela fictícia foi criada. |
-| Navegação, responsividade e interface | Atendido | Cabeçalho fixo, menu móvel, âncoras e foco visível. |
-| Deploy, repositório e README | Atendido | Site e código públicos, instruções locais, tecnologias, dependências e estrutura documentadas. |
-| Wireframes e evolução visual | Atendido | Exportações em `docs/wireframes/` e link do Figma. |
+| Sobre Mim em português e inglês | Atendido | Dicionários locais PT/EN, seletor global e persistência do idioma. |
+| Projetos em timeline com descrição, tecnologias e imagem/GIF | Atendido | Estudo de caso SM&A com descrição, tecnologias documentadas e captura real da tela de entrada. |
+| Link do repositório de cada projeto | Parcial | O projeto empresarial não possui link público por confidencialidade; o repositório do portfólio está publicado no GitHub. |
+| Experiências com instituição, função, período e descrição | Atendido | Registro da SM&A como estágio, de 2026 até o período atual. |
+| Contato com ícones e formulário funcional | Atendido | GitHub, LinkedIn, Gmail, WhatsApp, `mailto` alternativo e EmailJS validado anteriormente em produção. |
+| Validações e responsividade | Atendido | Testes automatizados, layout desktop/mobile, menu responsivo e foco visível. |
+| Deploy em nuvem | Atendido | Produção publicada na Vercel. |
+| README final, wireframes e demonstrações | Atendido | Esta documentação, exportações do Figma e capturas atuais versionadas. |
+| Segunda captura de login do colaborador | Pendente opcional | Não há autorização ou imagem verificável disponível; não é considerada requisito literal do LAB01. |
 
-## Verificações realizadas
+## Documentações e referências
 
-- `npm test`: valida navegação, alternância global PT/EN, persistência do idioma, preservação dos dados do formulário, projeto único, canais Gmail/WhatsApp e fallback `mailto`, validação traduzida e estados de sucesso/falha do EmailJS com mock.
-- `npm run build`: gera o bundle de produção Vite.
-- Wireframes desktop e mobile revisados visualmente no Figma.
-- URL de produção aberta em navegador e verificada, inclusive sem autenticação.
-- Formulário em produção submetido com sucesso ao EmailJS.
-
-## Limitação conhecida
-
-A captura da tela de login do colaborador não está disponível nos arquivos locais autorizados. Ela poderá ser adicionada em uma atualização futura somente após obtenção legítima e revisão para remover dados internos ou pessoais.
-
-## Referências
-
-- [Template de README do professor](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/blob/main/TEMPLATES/template_README.md).
-- Portfólios de [Flávio Júnior](https://flaviojunior-portfolio.vercel.app/), [Gabriel Victor](https://gabrielvictor.web.app/), [Pedro Braga](https://www.pedrobragadev.com/) e [Luca Azalim](https://azal.im/), consultados como inspiração de organização e apresentação.
+- Enunciado do LAB01 e material fornecido na disciplina DIAW.
+- [Template oficial de README do professor João Paulo Carneiro Aramuni](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/blob/main/TEMPLATES/template_README.md).
+- [React](https://react.dev/), [Vite](https://vite.dev/), [Vitest](https://vitest.dev/), [Testing Library](https://testing-library.com/), [EmailJS](https://www.emailjs.com/) e [Vercel](https://vercel.com/).
+- [Figma](https://www.figma.com/design/AP1vCzHXem9UYPc8woX1aO) e portfólios indicados no enunciado como referências de organização visual.
 
 ## Autor
 
-Arthur Monserrat Souza.
+**Arthur Monserrat Souza** - estudante de Engenharia de Software na PUC Minas.
+
+- [GitHub](https://github.com/ArthurMonserrat)
+- [LinkedIn](https://www.linkedin.com/in/arthurmonserrat)
+- [Gmail](https://mail.google.com/mail/?view=cm&fs=1&to=arthurmonserrat6%40gmail.com)
+
+## Agradecimentos
+
+Agradeço ao professor João Paulo Carneiro Aramuni pelas orientações da disciplina DIAW e pelas referências de documentação e prototipação do LAB01.

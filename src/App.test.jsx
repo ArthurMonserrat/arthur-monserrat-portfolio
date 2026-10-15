@@ -148,7 +148,7 @@ test('presents direct contact channels without implementation copy', () => {
   expect(screen.queryByText(/o formulário usa emailjs/i)).not.toBeInTheDocument()
   expect(screen.getByRole('link', { name: /github/i })).toHaveAttribute('href', 'https://github.com/ArthurMonserrat')
   expect(screen.getByRole('link', { name: /linkedin/i })).toHaveAttribute('href', 'https://www.linkedin.com/in/arthurmonserrat')
-  expect(screen.getByRole('link', { name: /gmail/i })).toHaveAttribute('href', 'https://mail.google.com/mail/?view=cm&fs=1&to=arthur-monserrat6%40gmail.com')
+  expect(screen.getByRole('link', { name: /gmail/i })).toHaveAttribute('href', 'https://mail.google.com/mail/?view=cm&fs=1&to=arthurmonserrat6%40gmail.com')
   expect(screen.getByRole('link', { name: /gmail/i })).toHaveAttribute('target', '_blank')
   expect(screen.getByRole('link', { name: /gmail/i })).toHaveAttribute('rel', 'noopener noreferrer')
   expect(screen.getByRole('link', { name: /whatsapp/i })).toHaveAttribute('href', 'https://wa.me/5531999501190')

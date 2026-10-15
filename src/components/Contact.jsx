@@ -6,7 +6,7 @@ const initialForm = { name: '', email: '', message: '' }
 const contactLinks = [
   { id: 'github', href: 'https://github.com/ArthurMonserrat', external: true, icon: 'github' },
   { id: 'linkedin', href: 'https://www.linkedin.com/in/arthurmonserrat', external: true, icon: 'linkedin' },
-  { id: 'gmail', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=arthur-monserrat6%40gmail.com', external: true, icon: 'gmail' },
+  { id: 'gmail', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=arthurmonserrat6%40gmail.com', external: true, icon: 'gmail' },
   { id: 'whatsapp', href: 'https://wa.me/5531999501190', external: true, icon: 'whatsapp' },
 ]
 
