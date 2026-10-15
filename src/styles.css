@@ -31,3 +31,7 @@ footer { width: min(1160px, calc(100% - 2rem)); margin: auto; padding: 1.8rem 0 
 .project-gallery img { display: block; width: 100%; height: auto; border: 1px solid #355260; border-radius: .45rem; background: #0b202f; }
 .project-gallery figcaption { color: #91a3ab; font-size: .78rem; margin-top: .45rem; }
 .contact-links { list-style: none; display: grid; gap: .7rem; padding: 0; margin: 1.6rem 0 0; }.contact-link { display: inline-flex; align-items: center; gap: .55rem; width: max-content; color: #c7ff4b; border-bottom: 1px solid transparent; padding-bottom: .2rem; }.contact-link:hover { border-color: currentColor; }.contact-link svg { width: 1.05rem; height: 1.05rem; flex: none; }
+.timeline-description, .contact-copy { text-align: justify; hyphens: auto; }
+.contact-fallback { color: #91a3ab; font-size: .82rem; margin-top: .9rem !important; }
+.contact-fallback a { color: #c7ff4b; text-decoration: underline; text-underline-offset: .2em; }
+@media (max-width: 640px) { .timeline-description, .contact-copy { text-align: left; hyphens: manual; } }

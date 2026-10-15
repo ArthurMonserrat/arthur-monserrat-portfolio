@@ -16,11 +16,12 @@ Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de So
 - Internacionalização local PT/EN no cabeçalho, com persistência em `localStorage` e atualização de `lang` no HTML.
 - Timeline de projeto e experiência profissional com dados locais.
 - Projeto corporativo apresentado sem publicar código-fonte ou rotas de acesso.
-- Links diretos para GitHub, LinkedIn e e-mail público.
+- Links diretos para GitHub, LinkedIn, composição do Gmail e WhatsApp, com alternativa de e-mail direto.
 - Formulário EmailJS com validação de nome, e-mail e mensagem, estado de envio e feedback acessível.
 - Layout responsivo, HTML semântico, labels, foco visível e contraste alto.
 - Galeria responsiva com a captura real da tela de entrada do Ecossistema SM&A, sem dados pessoais ou internos.
-- Parágrafo principal de **Sobre mim** justificado no desktop e alinhado à esquerda no mobile.
+- Textos explicativos do hero, Sobre mim, projeto, experiência e contato justificados no desktop e alinhados à esquerda no mobile.
+- Favicon SVG com o monograma AM. e identidade azul-noturno/verde-lima.
 
 ## Tecnologias e arquitetura
 
@@ -102,7 +103,7 @@ Esta é a única captura real disponível nos arquivos locais autorizados. A seg
 | Sobre em português e inglês, formação, interesses e objetivo | Atendido | Interface completa PT/EN, com seletor no cabeçalho, persistência local e `lang` dinâmico. |
 | Projetos em timeline com descrição, tecnologias e imagem/GIF | Atendido | Estudo de caso SM&A com descrição objetiva, tecnologias documentadas e uma tela de entrada real. |
 | Experiências com instituição, função, período e descrição | Atendido | Registro atual da SM&A como estágio, com período e descrição informados para esta entrega. |
-| Contato com ícones e formulário de e-mail | Atendido | Links para GitHub, LinkedIn e e-mail; envio EmailJS validado em produção. |
+| Contato com ícones e formulário de e-mail | Atendido | Links para GitHub, LinkedIn, Gmail e WhatsApp, alternativa `mailto` e envio EmailJS validado em produção. |
 | Link público do projeto empresarial | Limitado por confidencialidade | O repositório ou a aplicação interna do SM&A não são publicados; o portfólio apresenta apenas informações e captura autorizadas. |
 | Captura adicional da tela de login do colaborador | Pendente, sem impacto na exigência literal do LAB01 | Não havia sessão autorizada nem imagem fornecida para publicação; nenhuma tela fictícia foi criada. |
 | Navegação, responsividade e interface | Atendido | Cabeçalho fixo, menu móvel, âncoras e foco visível. |
@@ -111,7 +112,7 @@ Esta é a única captura real disponível nos arquivos locais autorizados. A seg
 
 ## Verificações realizadas
 
-- `npm test`: valida navegação, alternância global PT/EN, persistência do idioma, preservação dos dados do formulário, projeto único, canais de contato, validação traduzida e estados de sucesso/falha do EmailJS com mock.
+- `npm test`: valida navegação, alternância global PT/EN, persistência do idioma, preservação dos dados do formulário, projeto único, canais Gmail/WhatsApp e fallback `mailto`, validação traduzida e estados de sucesso/falha do EmailJS com mock.
 - `npm run build`: gera o bundle de produção Vite.
 - Wireframes desktop e mobile revisados visualmente no Figma.
 - URL de produção aberta em navegador e verificada, inclusive sem autenticação.

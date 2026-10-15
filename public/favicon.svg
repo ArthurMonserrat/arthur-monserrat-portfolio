@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>AM.</title>
+  <rect width="64" height="64" rx="12" fill="#071624"/>
+  <path fill="#f1f4ef" d="M11 45 22.5 19h6L40 45h-6l-2.3-5.5H19.8L17.5 45H11Zm10.7-10.3h8l-4-9.8-4 9.8ZM38 19h5.5l7.2 11.1L57.5 19H63v26h-5V27.8l-7.3 11.1h-.3l-7.3-11.1V45h-5V19Z"/>
+  <circle cx="57" cy="51" r="3.5" fill="#c7ff4b"/>
+</svg>

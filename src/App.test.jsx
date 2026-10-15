@@ -103,12 +103,19 @@ test('translates form validation feedback with the selected language', () => {
   expect(screen.getByText(/at least 10 characters/i)).toBeInTheDocument()
 })
 
-test('justifies only the main about paragraph', () => {
+test('marks the main about paragraph for controlled justification', () => {
   render(<App />)
 
   const aboutParagraph = screen.getByText(/Sou Arthur Monserrat, estudante do 3º período/i)
   expect(aboutParagraph).toHaveClass('about-copy')
   expect(screen.getByRole('heading', { name: /sobre mim/i })).not.toHaveClass('about-copy')
+})
+
+test('publishes the expanded interests and evidence-based knowledge list', () => {
+  render(<App />)
+
+  expect(screen.getByText(/Desenvolvimento web, interfaces e experiência do usuário/i)).toBeInTheDocument()
+  expect(screen.getByText(/HTML, CSS, JavaScript, React, Vite, Git e GitHub/i)).toBeInTheDocument()
 })
 
 test('keeps every section available through the mobile menu and marks the selected section', () => {
@@ -141,7 +148,21 @@ test('presents direct contact channels without implementation copy', () => {
   expect(screen.queryByText(/o formulário usa emailjs/i)).not.toBeInTheDocument()
   expect(screen.getByRole('link', { name: /github/i })).toHaveAttribute('href', 'https://github.com/ArthurMonserrat')
   expect(screen.getByRole('link', { name: /linkedin/i })).toHaveAttribute('href', 'https://www.linkedin.com/in/arthurmonserrat')
-  expect(screen.getByRole('link', { name: /e-mail/i })).toHaveAttribute('href', 'mailto:arthurmonserrat6@gmail.com')
+  expect(screen.getByRole('link', { name: /gmail/i })).toHaveAttribute('href', 'https://mail.google.com/mail/?view=cm&fs=1&to=arthur-monserrat6%40gmail.com')
+  expect(screen.getByRole('link', { name: /gmail/i })).toHaveAttribute('target', '_blank')
+  expect(screen.getByRole('link', { name: /gmail/i })).toHaveAttribute('rel', 'noopener noreferrer')
+  expect(screen.getByRole('link', { name: /whatsapp/i })).toHaveAttribute('href', 'https://wa.me/5531999501190')
+  expect(screen.getByRole('link', { name: /whatsapp/i })).toHaveAttribute('target', '_blank')
+  expect(screen.getByRole('link', { name: /whatsapp/i })).toHaveAttribute('rel', 'noopener noreferrer')
+  expect(screen.getByRole('link', { name: /e-mail direto/i })).toHaveAttribute('href', 'mailto:arthurmonserrat6@gmail.com')
+})
+
+test('includes the favicon and justified explanatory copy classes', () => {
+  render(<App />)
+
+  expect(screen.getByText(/Estudante de Engenharia de Software na PUC Minas/i)).toHaveClass('hero-copy')
+  expect(screen.getByText(/organiza o acesso às opções de apontamento/i)).toHaveClass('timeline-description')
+  expect(screen.getByText(/Vamos conversar sobre um projeto/i)).toHaveClass('contact-copy')
 })
 
 test('shows validation errors and does not claim a configured email delivery', () => {

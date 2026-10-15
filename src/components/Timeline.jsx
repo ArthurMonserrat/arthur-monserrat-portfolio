@@ -7,7 +7,7 @@ export default function Timeline({ entries, kind, language, copy }) {
           <article>
             <p className="timeline-kicker">{copy?.organization ?? entry.organization ?? copy?.kicker ?? 'PROJETO'}</p>
             <h3>{copy?.title ?? copy?.role ?? entry.title ?? entry.role}</h3>
-            {(copy?.paragraphs ?? [copy?.description ?? entry.description]).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            {(copy?.paragraphs ?? [copy?.description ?? entry.description]).map((paragraph) => <p className="timeline-description" key={paragraph}>{paragraph}</p>)}
             {entry.technologies && <ul className="tag-list">{entry.technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul>}
             {entry.images && <div className="project-gallery" role="group" aria-label={copy.galleryLabel}>
               {entry.images.map((image) => <figure key={image.src}><img src={image.src} alt={language === 'en' ? image.altEn : image.altPt} /><figcaption>{language === 'en' ? image.captionEn : image.captionPt}</figcaption></figure>)}

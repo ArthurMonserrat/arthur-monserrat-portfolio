@@ -20,7 +20,7 @@ export const translations = {
     },
     about: {
       paragraph: 'Sou Arthur Monserrat, estudante do 3º período de Engenharia de Software na PUC Minas. Desde 2026, sou estagiário na SM&A, onde trabalho com softwares industriais. Essa experiência me permite aproximar os conhecimentos da graduação da prática profissional e ampliar minha compreensão sobre o desenvolvimento e a aplicação de sistemas em ambientes industriais.',
-      facts: ['Formação: Engenharia de Software — PUC Minas', 'Interesses: desenvolvimento web, interfaces e software', 'Conhecimentos: HTML, CSS, JavaScript, Git e GitHub'],
+      facts: ['Formação: Engenharia de Software — PUC Minas', 'Interesses: Desenvolvimento web, interfaces e experiência do usuário, sistemas industriais, automação de processos e integração de sistemas.', 'Conhecimentos: HTML, CSS, JavaScript, React, Vite, Git e GitHub'],
     },
     project: {
       kicker: 'PROJETO',
@@ -38,6 +38,7 @@ export const translations = {
     contact: {
       description: 'Vamos conversar sobre um projeto, uma ideia ou uma oportunidade de colaboração.',
       channelsLabel: 'Canais de contato',
+      channels: { github: 'GitHub', linkedin: 'LinkedIn', gmail: 'Gmail', whatsapp: 'WhatsApp', emailDirect: 'E-mail direto', fallback: 'Prefere outro aplicativo? Use o e-mail direto.' },
       fields: { name: 'Nome', email: 'E-mail', message: 'Mensagem' },
       submit: 'Enviar mensagem', sending: 'Enviando…',
       errors: { name: 'Informe seu nome.', email: 'Informe um e-mail válido.', message: 'Escreva uma mensagem com pelo menos 10 caracteres.' },
@@ -65,7 +66,7 @@ export const translations = {
     },
     about: {
       paragraph: 'I’m Arthur Monserrat, a third-semester Software Engineering student at PUC Minas. Since 2026, I’ve been an intern at SM&A, working with industrial software. This experience allows me to connect what I learn at university with professional practice and gain a deeper understanding of software development and its application in industrial environments.',
-      facts: ['Education: Software Engineering — PUC Minas', 'Interests: web development, interfaces, and software', 'Knowledge: HTML, CSS, JavaScript, Git, and GitHub'],
+      facts: ['Education: Software Engineering — PUC Minas', 'Interests: Web development, user interfaces and user experience, industrial systems, process automation, and systems integration.', 'Knowledge: HTML, CSS, JavaScript, React, Vite, Git, and GitHub'],
     },
     project: {
       kicker: 'PROJECT',
@@ -83,6 +84,7 @@ export const translations = {
     contact: {
       description: 'Let’s talk about a project, an idea, or an opportunity to collaborate.',
       channelsLabel: 'Contact channels',
+      channels: { github: 'GitHub', linkedin: 'LinkedIn', gmail: 'Gmail', whatsapp: 'WhatsApp', emailDirect: 'Direct email', fallback: 'Prefer another app? Use direct email.' },
       fields: { name: 'Name', email: 'Email', message: 'Message' },
       submit: 'Send message', sending: 'Sending…',
       errors: { name: 'Please enter your name.', email: 'Please enter a valid email.', message: 'Write a message with at least 10 characters.' },
