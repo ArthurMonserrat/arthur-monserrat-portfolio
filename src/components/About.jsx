@@ -3,12 +3,12 @@ import { useState } from 'react'
 const copy = {
   pt: {
     button: 'English',
-    paragraph: 'Sou Arthur Monserrat Souza, estudante do 3º período de Engenharia de Software na PUC Minas. Desde janeiro de 2025, atuo como Auxiliar Administrativo, com análise documental, de dados e de áudios em processos de prevenção a fraudes. Tenho interesse em desenvolvimento web, interfaces e aplicações de software.',
+    paragraph: 'Sou Arthur Monserrat, estudante do 3º período de Engenharia de Software na PUC Minas. Desde 2026, sou estagiário na SM&A, onde trabalho com softwares industriais. Essa experiência me permite aproximar os conhecimentos da graduação da prática profissional e ampliar minha compreensão sobre o desenvolvimento e a aplicação de sistemas em ambientes industriais.',
     facts: ['Formação: Engenharia de Software — PUC Minas', 'Interesses: desenvolvimento web, interfaces e software', 'Conhecimentos: HTML, CSS, JavaScript, Git e GitHub'],
   },
   en: {
     button: 'Português',
-    paragraph: 'I am Arthur Monserrat Souza, a third-semester Software Engineering student at the Pontifical Catholic University of Minas Gerais. Since January 2025, I have worked as an Administrative Assistant, analyzing documents, data, and audio in fraud prevention processes. I am interested in web development, interfaces, and software applications.',
+    paragraph: 'I’m Arthur Monserrat, a third-semester Software Engineering student at PUC Minas. Since 2026, I’ve been an intern at SM&A, working with industrial software. This experience allows me to connect what I learn at university with professional practice and gain a deeper understanding of software development and its application in industrial environments.',
     facts: ['Education: Software Engineering — PUC Minas', 'Interests: web development, interfaces, and software', 'Knowledge: HTML, CSS, JavaScript, Git, and GitHub'],
   },
 }

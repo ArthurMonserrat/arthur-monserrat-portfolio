@@ -20,13 +20,33 @@ test('renders the portfolio navigation and required sections', () => {
   expect(screen.getByRole('heading', { name: /contato/i })).toBeInTheDocument()
 })
 
+test('renders the concise hero without secondary actions', () => {
+  render(<App />)
+
+  expect(screen.getByRole('heading', { name: /Arthur Monserrat\./i })).toBeInTheDocument()
+  expect(screen.queryByText(/Estudante de Engenharia de Software na PUC Minas/i)).toBeInTheDocument()
+  expect(screen.queryByRole('link', { name: /ver projeto/i })).not.toBeInTheDocument()
+  expect(screen.queryByRole('link', { name: /entrar em contato/i })).not.toBeInTheDocument()
+})
+
+test('presents the verified current education and professional experience', () => {
+  render(<App />)
+
+  expect(screen.getByText(/Sou Arthur Monserrat, estudante do 3º período/i)).toBeInTheDocument()
+  expect(screen.getByText(/Desde 2026, sou estagiário na SM&A/i)).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: /estagiário/i })).toBeInTheDocument()
+  expect(screen.getByText('2026 — Atual')).toBeInTheDocument()
+  expect(screen.getByText(/Atuação com softwares industriais/i)).toBeInTheDocument()
+  expect(screen.queryByRole('heading', { name: /auxiliar administrativo/i })).not.toBeInTheDocument()
+})
+
 test('switches the about section to English', () => {
   render(<App />)
 
   expect(screen.getAllByText(/PUC Minas/i).length).toBeGreaterThan(0)
   fireEvent.click(screen.getByRole('button', { name: /english/i }))
 
-  expect(screen.getByText(/Pontifical Catholic University of Minas Gerais/i)).toBeInTheDocument()
+  expect(screen.getByText(/I’m Arthur Monserrat, a third-semester Software Engineering student at PUC Minas/i)).toBeInTheDocument()
   expect(screen.getByRole('button', { name: /português/i })).toHaveAttribute('aria-pressed', 'true')
 })
 

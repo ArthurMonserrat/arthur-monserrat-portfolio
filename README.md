@@ -96,7 +96,7 @@ O portfólio apresenta apenas o Sistema de Apontamento de Horas. A imagem abaixo
 | --- | --- | --- |
 | Sobre em português e inglês, formação, interesses e objetivo | Atendido | Seção **Sobre mim** com alternância PT/EN baseada no currículo. |
 | Projetos em timeline com descrição, tecnologias e imagem/GIF | Atendido em parte | Estudo de caso SM&A com tecnologias e tela de entrada real; código e aplicação não são públicos por confidencialidade. |
-| Experiências com instituição, função, período e descrição | Atendido em parte | Função, período e atividades vêm do currículo; a empresa não foi informada no currículo e não foi inventada. |
+| Experiências com instituição, função, período e descrição | Atendido | Registro atual da SM&A como estágio, com período e descrição informados para esta entrega. |
 | Contato com ícones e formulário de e-mail | Atendido | Links para GitHub, LinkedIn e e-mail; envio EmailJS validado em produção. |
 | Navegação, responsividade e interface | Atendido | Cabeçalho fixo, menu móvel, âncoras e foco visível. |
 | Deploy, repositório e README | Atendido | Site e código públicos, instruções locais, tecnologias, dependências e estrutura documentadas. |

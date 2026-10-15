@@ -33,17 +33,19 @@ export default function Header() {
 
   return (
     <header className="site-header">
-      <a className="brand" href="#inicio" aria-label="Arthur Monserrat, início">AM<span>.</span></a>
-      <nav aria-label="Navegação principal">
-        <button className="menu-toggle" type="button" aria-expanded={isOpen} aria-controls="primary-menu" aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'} onClick={() => setIsOpen((open) => !open)}>
-          <span aria-hidden="true">{isOpen ? '×' : '☰'}</span>
-        </button>
-        <ul id="primary-menu" className={isOpen ? 'is-open' : ''}>
-          {links.map(([label, href], index) => (
-            <li key={href}><a href={href} aria-current={activeHref === href ? 'page' : undefined} onClick={() => selectLink(href)}><span>0{index + 1}</span>{label}</a></li>
-          ))}
-        </ul>
-      </nav>
+      <div className="site-header__inner">
+        <a className="brand" href="#inicio" aria-label="Arthur Monserrat, início">AM<span>.</span></a>
+        <nav aria-label="Navegação principal">
+          <button className="menu-toggle" type="button" aria-expanded={isOpen} aria-controls="primary-menu" aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'} onClick={() => setIsOpen((open) => !open)}>
+            <span aria-hidden="true">{isOpen ? '×' : '☰'}</span>
+          </button>
+          <ul id="primary-menu" className={isOpen ? 'is-open' : ''}>
+            {links.map(([label, href], index) => (
+              <li key={href}><a href={href} aria-current={activeHref === href ? 'page' : undefined} onClick={() => selectLink(href)}><span>0{index + 1}</span>{label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }

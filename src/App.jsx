@@ -13,12 +13,8 @@ export default function App() {
       <main>
         <section className="hero" id="inicio" aria-labelledby="hero-title">
           <p className="eyebrow">PORTFÓLIO / 2026</p>
-          <h1 id="hero-title">Arthur<br />Monserrat <em>Souza.</em></h1>
+          <h1 id="hero-title">Arthur<br /><em>Monserrat.</em></h1>
           <p className="hero-copy">Estudante de Engenharia de Software na PUC Minas, com interesse em desenvolvimento web e interfaces.</p>
-          <div className="hero-actions">
-            <a className="text-link" href="#projetos">Ver projeto <span aria-hidden="true">↓</span></a>
-            <a className="secondary-link" href="#contato">Entrar em contato</a>
-          </div>
         </section>
 
         <section id="sobre" aria-labelledby="sobre-title">

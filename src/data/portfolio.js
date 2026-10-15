@@ -11,9 +11,9 @@ export const projects = [
 
 export const experiences = [
   {
-    period: 'Jan. 2025 — atual',
-    organization: 'Atuação administrativa',
-    role: 'Auxiliar Administrativo',
-    description: 'Atuação em análise documental, de dados e de áudios em processos de prevenção a fraudes.',
+    period: '2026 — Atual',
+    organization: 'SM&A',
+    role: 'Estagiário',
+    description: 'Atuação com softwares industriais, adquirindo experiência prática com sistemas utilizados no setor e aprofundando conhecimentos relacionados à Engenharia de Software.',
   },
 ]
