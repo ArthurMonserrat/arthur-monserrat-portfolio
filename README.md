@@ -28,5 +28,5 @@ docs/
 
 ## Próximas etapas
 
-- S02: conteúdo PT/EN, timelines, validações, contato e responsividade.
+- S02: conteúdo PT/EN, timelines, validações, contato e responsividade. **Implementada localmente:** alternância de idioma, projetos públicos, experiência técnica, formulário acessível e validações.
 - S03: capturas reais de projetos, acabamento, deploy e documentação final.

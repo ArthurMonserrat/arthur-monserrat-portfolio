@@ -1,6 +1,10 @@
 import Footer from './components/Footer'
 import Header from './components/Header'
 import SectionHeading from './components/SectionHeading'
+import About from './components/About'
+import Contact from './components/Contact'
+import Timeline from './components/Timeline'
+import { experiences, projects } from './data/portfolio'
 
 export default function App() {
   return (
@@ -15,23 +19,23 @@ export default function App() {
         </section>
 
         <section id="sobre" aria-labelledby="sobre-title">
-          <SectionHeading number="01" eyebrow="APRESENTAÇÃO" title="Sobre mim" />
-          <p className="section-placeholder" id="sobre-title">Uma apresentação bilíngue será adicionada com informações verificadas do Arthur.</p>
+          <SectionHeading number="01" eyebrow="APRESENTAÇÃO" title="Sobre mim" id="sobre-title" />
+          <About />
         </section>
 
         <section id="projetos" aria-labelledby="projetos-title">
-          <SectionHeading number="02" eyebrow="TRABALHOS SELECIONADOS" title="Projetos" />
-          <p className="section-placeholder" id="projetos-title">Projetos públicos e capturas reais serão organizados aqui em ordem cronológica.</p>
+          <SectionHeading number="02" eyebrow="TRABALHOS SELECIONADOS" title="Projetos" id="projetos-title" />
+          <Timeline entries={projects} kind="projects" />
         </section>
 
         <section id="experiencias" aria-labelledby="experiencias-title">
-          <SectionHeading number="03" eyebrow="PERCURSO" title="Experiências" />
-          <p className="section-placeholder" id="experiencias-title">Experiências acadêmicas e técnicas verificadas serão apresentadas com contexto e período.</p>
+          <SectionHeading number="03" eyebrow="PERCURSO" title="Experiências" id="experiencias-title" />
+          <Timeline entries={experiences} kind="experiences" />
         </section>
 
         <section id="contato" aria-labelledby="contato-title">
-          <SectionHeading number="04" eyebrow="VAMOS CONVERSAR" title="Contato" />
-          <p className="section-placeholder" id="contato-title">Os canais de contato e o formulário estarão disponíveis nesta seção.</p>
+          <SectionHeading number="04" eyebrow="VAMOS CONVERSAR" title="Contato" id="contato-title" />
+          <Contact />
         </section>
       </main>
       <Footer />
