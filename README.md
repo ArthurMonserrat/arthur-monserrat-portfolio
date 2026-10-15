@@ -7,6 +7,7 @@ Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de So
 ## Links
 
 - Site publicado: pendente de deploy na Vercel.
+- Código-fonte: [ArthurMonserrat/arthur-monserrat-portfolio](https://github.com/ArthurMonserrat/arthur-monserrat-portfolio).
 - Wireframes: [Figma](https://www.figma.com/design/AP1vCzHXem9UYPc8woX1aO).
 - Repositórios apresentados: [Sistema de Apontamento de Horas](https://github.com/ArthurMonserrat/sma-apontamento-horas) e [Banco de Horas 2](https://github.com/ArthurMonserrat/banco-de-horas-2).
 
