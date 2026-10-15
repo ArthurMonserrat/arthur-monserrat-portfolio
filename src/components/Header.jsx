@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react'
 
-const links = [
-  ['Sobre', '#sobre'],
-  ['Projetos', '#projetos'],
-  ['Experiências', '#experiencias'],
-  ['Contato', '#contato'],
-]
-
-export default function Header() {
+export default function Header({ language, setLanguage, copy }) {
   const [isOpen, setIsOpen] = useState(false)
   const [activeHref, setActiveHref] = useState('')
+  const links = [
+    [copy.nav.about, '#sobre'],
+    [copy.nav.projects, '#projetos'],
+    [copy.nav.experience, '#experiencias'],
+    [copy.nav.contact, '#contato'],
+  ]
 
   useEffect(() => {
     if (!('IntersectionObserver' in window)) return undefined
@@ -34,9 +33,9 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <a className="brand" href="#inicio" aria-label="Arthur Monserrat, início">AM<span>.</span></a>
-        <nav aria-label="Navegação principal">
-          <button className="menu-toggle" type="button" aria-expanded={isOpen} aria-controls="primary-menu" aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'} onClick={() => setIsOpen((open) => !open)}>
+        <a className="brand" href="#inicio" aria-label={language === 'pt' ? 'Arthur Monserrat, início' : 'Arthur Monserrat, home'}>AM<span>.</span></a>
+        <nav aria-label={copy.navLabel}>
+          <button className="menu-toggle" type="button" aria-expanded={isOpen} aria-controls="primary-menu" aria-label={isOpen ? copy.menu.close : copy.menu.open} onClick={() => setIsOpen((open) => !open)}>
             <span aria-hidden="true">{isOpen ? '×' : '☰'}</span>
           </button>
           <ul id="primary-menu" className={isOpen ? 'is-open' : ''}>
@@ -45,6 +44,11 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+        <div className="language-switcher" aria-label={language === 'pt' ? 'Idioma' : 'Language'}>
+          <button type="button" className="language-option" aria-label="Português" aria-pressed={language === 'pt'} onClick={() => setLanguage('pt')}>PT</button>
+          <span aria-hidden="true">|</span>
+          <button type="button" className="language-option" aria-label="English" aria-pressed={language === 'en'} onClick={() => setLanguage('en')}>EN</button>
+        </div>
       </div>
     </header>
   )

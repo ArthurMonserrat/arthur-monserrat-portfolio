@@ -1,3 +1,3 @@
-export default function Footer() {
-  return <footer>© {new Date().getFullYear()} Arthur Monserrat Souza <span>— engenharia de software</span></footer>
+export default function Footer({ copy }) {
+  return <footer>© {new Date().getFullYear()} Arthur Monserrat <span>— {copy.footer}</span></footer>
 }

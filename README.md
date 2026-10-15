@@ -13,13 +13,14 @@ Portfólio profissional de Arthur Monserrat Souza, estudante de Engenharia de So
 ## Funcionalidades
 
 - Cabeçalho fixo, navegação por âncoras, seção ativa e menu móvel com todas as seções.
-- Apresentação alternável entre português e inglês.
+- Internacionalização local PT/EN no cabeçalho, com persistência em `localStorage` e atualização de `lang` no HTML.
 - Timeline de projeto e experiência profissional com dados locais.
 - Projeto corporativo apresentado sem publicar código-fonte ou rotas de acesso.
 - Links diretos para GitHub, LinkedIn e e-mail público.
 - Formulário EmailJS com validação de nome, e-mail e mensagem, estado de envio e feedback acessível.
 - Layout responsivo, HTML semântico, labels, foco visível e contraste alto.
-- Captura real da tela de entrada do Ecossistema SM&A, sem dados pessoais ou internos.
+- Galeria responsiva com a captura real da tela de entrada do Ecossistema SM&A, sem dados pessoais ou internos.
+- Parágrafo principal de **Sobre mim** justificado no desktop e alinhado à esquerda no mobile.
 
 ## Tecnologias e arquitetura
 
@@ -36,6 +37,8 @@ O navegador entrega o front-end React pela Vercel. O formulário chama o EmailJS
 src/
   components/       # Header, About, Timeline, Contact, Footer
   data/             # projetos e experiências em arrays
+  hooks/             # persistência e sincronização do idioma
+  i18n.js            # dicionários PT/EN da interface
   test/             # setup do Vitest
 docs/
   wireframes/       # exportações desktop e mobile do Figma
@@ -84,18 +87,20 @@ Os wireframes de média fidelidade da Sprint 01 foram criados no Figma e exporta
 
 ![Wireframe mobile](docs/wireframes/mobile.png)
 
-## Captura do projeto
+## Capturas do projeto
 
-O portfólio apresenta apenas o Sistema de Apontamento de Horas. A imagem abaixo é a tela de entrada real do Ecossistema SM&A, que mostra a seleção dos sistemas Banco de Horas 1 e Banco de Horas 2 (Campo e Estudos); ela não é um painel administrativo nem uma visão de colaborador e não contém dados pessoais ou internos.
+O portfólio apresenta apenas o Sistema de Apontamento de Horas. A descrição pública explica o contexto e a finalidade observáveis na tela de entrada, sem atribuir autoria integral ou publicar dados internos.
 
 ![Tela de entrada do Ecossistema SM&A](docs/screenshots/sistema-apontamento-horas.png)
+
+Esta é a única captura real disponível nos arquivos locais autorizados. A segunda captura, da tela de login do colaborador, permanece pendente até existir uma imagem obtida e autorizada para publicação; nenhuma tela foi fabricada ou substituída por um painel administrativo.
 
 ## Matriz de requisitos — LAB01
 
 | Requisito | Status | Evidência |
 | --- | --- | --- |
-| Sobre em português e inglês, formação, interesses e objetivo | Atendido | Seção **Sobre mim** com alternância PT/EN baseada no currículo. |
-| Projetos em timeline com descrição, tecnologias e imagem/GIF | Atendido em parte | Estudo de caso SM&A com tecnologias e tela de entrada real; código e aplicação não são públicos por confidencialidade. |
+| Sobre em português e inglês, formação, interesses e objetivo | Atendido | Interface completa PT/EN, com seletor no cabeçalho, persistência local e `lang` dinâmico. |
+| Projetos em timeline com descrição, tecnologias e imagem/GIF | Atendido em parte | Estudo de caso SM&A com descrição ampliada, tecnologias e uma tela de entrada real; a segunda captura autorizada ainda não está disponível. |
 | Experiências com instituição, função, período e descrição | Atendido | Registro atual da SM&A como estágio, com período e descrição informados para esta entrega. |
 | Contato com ícones e formulário de e-mail | Atendido | Links para GitHub, LinkedIn e e-mail; envio EmailJS validado em produção. |
 | Navegação, responsividade e interface | Atendido | Cabeçalho fixo, menu móvel, âncoras e foco visível. |
@@ -104,7 +109,7 @@ O portfólio apresenta apenas o Sistema de Apontamento de Horas. A imagem abaixo
 
 ## Verificações realizadas
 
-- `npm test`: valida navegação, alternância de idioma, projeto único, canais de contato, validação e estados de sucesso/falha do EmailJS com mock.
+- `npm test`: valida navegação, alternância global PT/EN, persistência do idioma, preservação dos dados do formulário, projeto único, canais de contato, validação traduzida e estados de sucesso/falha do EmailJS com mock.
 - `npm run build`: gera o bundle de produção Vite.
 - Wireframes desktop e mobile revisados visualmente no Figma.
 - URL de produção aberta em navegador e verificada, inclusive sem autenticação.
@@ -112,7 +117,7 @@ O portfólio apresenta apenas o Sistema de Apontamento de Horas. A imagem abaixo
 
 ## Limitação conhecida
 
-A captura da visão de colaborador não estava disponível sem autenticação adicional. Ela pode substituir a tela de entrada em uma atualização futura, após revisão para remover dados internos ou pessoais.
+A captura da tela de login do colaborador não está disponível nos arquivos locais autorizados. Ela poderá ser adicionada em uma atualização futura somente após obtenção legítima e revisão para remover dados internos ou pessoais.
 
 ## Referências
 

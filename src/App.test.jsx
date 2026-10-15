@@ -1,5 +1,5 @@
 import { fireEvent, render, screen, within } from '@testing-library/react'
-import { afterEach, expect, test, vi } from 'vitest'
+import { afterEach, beforeEach, expect, test, vi } from 'vitest'
 import emailjs from '@emailjs/browser'
 import App from './App'
 
@@ -8,6 +8,12 @@ vi.mock('@emailjs/browser', () => ({ default: { send: vi.fn() } }))
 afterEach(() => {
   vi.clearAllMocks()
   vi.unstubAllEnvs()
+  window.localStorage.clear()
+  document.documentElement.lang = 'pt-BR'
+})
+
+beforeEach(() => {
+  window.localStorage.clear()
 })
 
 test('renders the portfolio navigation and required sections', () => {
@@ -43,11 +49,66 @@ test('presents the verified current education and professional experience', () =
 test('switches the about section to English', () => {
   render(<App />)
 
-  expect(screen.getAllByText(/PUC Minas/i).length).toBeGreaterThan(0)
   fireEvent.click(screen.getByRole('button', { name: /english/i }))
 
   expect(screen.getByText(/I’m Arthur Monserrat, a third-semester Software Engineering student at PUC Minas/i)).toBeInTheDocument()
-  expect(screen.getByRole('button', { name: /português/i })).toHaveAttribute('aria-pressed', 'true')
+  expect(screen.getByRole('button', { name: /english/i })).toHaveAttribute('aria-pressed', 'true')
+})
+
+test('switches every interface string to English without losing form data', () => {
+  render(<App />)
+
+  fireEvent.change(screen.getByLabelText('Nome'), { target: { value: 'Visitante' } })
+  fireEvent.change(screen.getByLabelText('E-mail'), { target: { value: 'visitante@example.com' } })
+  fireEvent.change(screen.getByLabelText('Mensagem'), { target: { value: 'Mensagem preservada.' } })
+  fireEvent.click(screen.getByRole('button', { name: /^English$/i }))
+
+  expect(document.documentElement.lang).toBe('en')
+  expect(document.title).toBe('Arthur Monserrat — Software Engineering')
+  expect(window.localStorage.getItem('portfolio-language')).toBe('en')
+  expect(screen.getByRole('link', { name: /about/i })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: /about me/i })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: /projects/i })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: /experience/i })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: /intern/i })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: /contact/i })).toBeInTheDocument()
+  expect(screen.getByRole('img', { name: /SM&A Ecosystem entry screen/i })).toBeInTheDocument()
+  expect(screen.getAllByText(/software engineering/i).length).toBeGreaterThan(0)
+  expect(screen.getByLabelText('Name')).toHaveValue('Visitante')
+  expect(screen.getByLabelText('Email')).toHaveValue('visitante@example.com')
+  expect(screen.getByLabelText('Message')).toHaveValue('Mensagem preservada.')
+
+  fireEvent.click(screen.getByRole('button', { name: /português/i }))
+  expect(document.documentElement.lang).toBe('pt-BR')
+  expect(document.title).toBe('Arthur Monserrat — Engenharia de Software')
+  expect(screen.getByRole('heading', { name: /sobre mim/i })).toBeInTheDocument()
+  expect(screen.getByLabelText('Nome')).toHaveValue('Visitante')
+})
+
+test('restores the saved language on a new visit', () => {
+  window.localStorage.setItem('portfolio-language', 'en')
+  render(<App />)
+
+  expect(document.documentElement.lang).toBe('en')
+  expect(screen.getByRole('heading', { name: /about me/i })).toBeInTheDocument()
+})
+
+test('translates form validation feedback with the selected language', () => {
+  render(<App />)
+  fireEvent.click(screen.getByRole('button', { name: /^English$/i }))
+  fireEvent.click(screen.getByRole('button', { name: /send message/i }))
+
+  expect(screen.getByText(/please enter your name/i)).toBeInTheDocument()
+  expect(screen.getByText(/please enter a valid email/i)).toBeInTheDocument()
+  expect(screen.getByText(/at least 10 characters/i)).toBeInTheDocument()
+})
+
+test('justifies only the main about paragraph', () => {
+  render(<App />)
+
+  const aboutParagraph = screen.getByText(/Sou Arthur Monserrat, estudante do 3º período/i)
+  expect(aboutParagraph).toHaveClass('about-copy')
+  expect(screen.getByRole('heading', { name: /sobre mim/i })).not.toHaveClass('about-copy')
 })
 
 test('keeps every section available through the mobile menu and marks the selected section', () => {
@@ -68,7 +129,7 @@ test('shows only the private corporate project with its correctly identified ent
   expect(screen.getByRole('heading', { name: /sistema de apontamento de horas/i })).toBeInTheDocument()
   expect(screen.queryByRole('heading', { name: /banco de horas 2/i })).not.toBeInTheDocument()
   expect(screen.getByRole('img', { name: /tela de entrada do ecossistema SM&A/i })).toHaveAttribute('src', '/images/projects/sistema-apontamento-horas.png')
-  expect(screen.getByText(/portal do ecossistema SM&A/i)).toBeInTheDocument()
+  expect(screen.getByText(/Desenvolvido no contexto do Ecossistema SM&A/i)).toBeInTheDocument()
   expect(screen.queryByRole('link', { name: /^github ↗$/i })).not.toBeInTheDocument()
   expect(screen.queryByRole('link', { name: /^aplicação ↗$/i })).not.toBeInTheDocument()
 })
