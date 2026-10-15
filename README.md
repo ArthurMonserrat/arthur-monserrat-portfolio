@@ -89,7 +89,7 @@ Os wireframes de média fidelidade da Sprint 01 foram criados no Figma e exporta
 
 ## Capturas do projeto
 
-O portfólio apresenta apenas o Sistema de Apontamento de Horas. A descrição pública explica o contexto e a finalidade observáveis na tela de entrada, sem atribuir autoria integral ou publicar dados internos.
+O portfólio apresenta apenas o Sistema de Apontamento de Horas. A descrição pública explica a organização observável na tela de entrada, sem atribuir autoria integral ou publicar dados internos.
 
 ![Tela de entrada do Ecossistema SM&A](docs/screenshots/sistema-apontamento-horas.png)
 
@@ -100,9 +100,11 @@ Esta é a única captura real disponível nos arquivos locais autorizados. A seg
 | Requisito | Status | Evidência |
 | --- | --- | --- |
 | Sobre em português e inglês, formação, interesses e objetivo | Atendido | Interface completa PT/EN, com seletor no cabeçalho, persistência local e `lang` dinâmico. |
-| Projetos em timeline com descrição, tecnologias e imagem/GIF | Atendido em parte | Estudo de caso SM&A com descrição ampliada, tecnologias e uma tela de entrada real; a segunda captura autorizada ainda não está disponível. |
+| Projetos em timeline com descrição, tecnologias e imagem/GIF | Atendido | Estudo de caso SM&A com descrição objetiva, tecnologias documentadas e uma tela de entrada real. |
 | Experiências com instituição, função, período e descrição | Atendido | Registro atual da SM&A como estágio, com período e descrição informados para esta entrega. |
 | Contato com ícones e formulário de e-mail | Atendido | Links para GitHub, LinkedIn e e-mail; envio EmailJS validado em produção. |
+| Link público do projeto empresarial | Limitado por confidencialidade | O repositório ou a aplicação interna do SM&A não são publicados; o portfólio apresenta apenas informações e captura autorizadas. |
+| Captura adicional da tela de login do colaborador | Pendente, sem impacto na exigência literal do LAB01 | Não havia sessão autorizada nem imagem fornecida para publicação; nenhuma tela fictícia foi criada. |
 | Navegação, responsividade e interface | Atendido | Cabeçalho fixo, menu móvel, âncoras e foco visível. |
 | Deploy, repositório e README | Atendido | Site e código públicos, instruções locais, tecnologias, dependências e estrutura documentadas. |
 | Wireframes e evolução visual | Atendido | Exportações em `docs/wireframes/` e link do Figma. |

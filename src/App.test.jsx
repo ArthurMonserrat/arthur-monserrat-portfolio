@@ -129,7 +129,7 @@ test('shows only the private corporate project with its correctly identified ent
   expect(screen.getByRole('heading', { name: /sistema de apontamento de horas/i })).toBeInTheDocument()
   expect(screen.queryByRole('heading', { name: /banco de horas 2/i })).not.toBeInTheDocument()
   expect(screen.getByRole('img', { name: /tela de entrada do ecossistema SM&A/i })).toHaveAttribute('src', '/images/projects/sistema-apontamento-horas.png')
-  expect(screen.getByText(/Desenvolvido no contexto do Ecossistema SM&A/i)).toBeInTheDocument()
+  expect(screen.getByText(/organiza o acesso às opções de apontamento de horas/i)).toBeInTheDocument()
   expect(screen.queryByRole('link', { name: /^github ↗$/i })).not.toBeInTheDocument()
   expect(screen.queryByRole('link', { name: /^aplicação ↗$/i })).not.toBeInTheDocument()
 })
